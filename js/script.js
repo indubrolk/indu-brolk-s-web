@@ -4,12 +4,23 @@ const ins = document.getElementById("ins-btn")
 const x = document.getElementById("x-btn")
 
 document.addEventListener("DOMContentLoaded", function(){
-    setTimeout(function(){
+
+    if(!sessionStorage.getItem("firstVisit")) {
+        sessionStorage.setItem("firstVisit", "true");
+
+
+        setTimeout(function () {
+            document.getElementById("loading-screen").style.display = "none";
+            document.getElementById("main-content").style.display = "block";
+
+
+        }, 2500);
+    }
+    else{
         document.getElementById("loading-screen").style.display = "none";
         document.getElementById("main-content").style.display = "block";
 
-
-    }, 2000);
+    }
 });
 
 
