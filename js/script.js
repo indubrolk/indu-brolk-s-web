@@ -3,6 +3,15 @@ const fb = document.getElementById("fb-btn")
 const ins = document.getElementById("ins-btn")
 const x = document.getElementById("x-btn")
 
+document.addEventListener("DOMContentLoaded", function(){
+    setTimeout(function(){
+        document.getElementById("loading-screen").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+
+
+    }, 2000);
+});
+
 
 yt.addEventListener("click",function(){
     window.location.href = "https://www.youtube.com/@indubrolk ";
