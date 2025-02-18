@@ -8,21 +8,54 @@ html{
     scroll-behavior: smooth;
 }
 
+.loadin-gradient{
+    z-index: 1;
+    background: linear-gradient(-45deg, red, green, blue, yellow);
+    background-size: 400% 400%;
+    width: 100%;
+    height: 100vh;
+    animation: animate 15s infinite;
+}
+
+@keyframes animate {
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+    
+}
+
 .loading-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #1a1a1a;
     color: white;
     font-family: Arial, sans-serif;
     text-align: center;
+    background: linear-gradient(-45deg, #1a1a1a, #432713, #1a1a1a, #472812);
+    background-size: 400% 400%;
+    animation: gradientAnimation 6s infinite alternate;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
 }
 
 .text h1 {
     font-size: 3rem;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     animation: blink-animation 4s infinite;
 }
 
@@ -52,18 +85,18 @@ html{
     height: 100%;
     background-color: #ff6600;
     position: absolute;
-    animation: loading-animation 6s forwards cubic-bezier(0,0,0,0);
+    animation: loading-animation 8s forwards cubic-bezier(0,0,0,0);
 }
 
 @keyframes loading-animation {
     0% {
         width: 0;
     }
-    /*50% {*/
-    /*    width: 75%;*/
-    /*}*/
+    50% {
+        width: 75%;
+    }
     100% {
-        width: 300%;
+        width: 150%;
     }
 }
 
