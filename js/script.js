@@ -2,6 +2,9 @@ const yt = document.getElementById("yt-btn")
 const fb = document.getElementById("fb-btn")
 const ins = document.getElementById("ins-btn")
 const x = document.getElementById("x-btn")
+// const menuIcon = document.getElementById('menu-icon');
+// const navLinks = document.querySelector(".nav-links");
+
 
 document.addEventListener("DOMContentLoaded", function(){
 
@@ -22,6 +25,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
     }
 });
+
+// menuIcon.addEventListener("click", () => {
+//     navLinks.classList.toggle("active");
+// });
 
 
 yt.addEventListener("click",function(){
@@ -70,12 +77,9 @@ function login() {
     return false;
 }
 
-const menuIcon = document.getElementById('menu-icon');
-const navLinks = document.querySelector('.nav-links');
 
-menuIcon.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
+
+
 
 function showAlert() {
     const username = document.getElementById('username').value;
