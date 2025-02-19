@@ -32,13 +32,21 @@
     <h1>CONTENTS</h1>
 </div>
 
-<div class="hero">
-    <div class="btn-box">
-        <i class="fa-solid fa-book"></i>
-    </div>
+<br/>
+<br/>
+
+<div class="tab-buttons">
+    <button onclick="openTab('videos')" class="active">Videos</button>
+    <button onclick="openTab('articles')">Articles</button>
 </div>
 
-<div class="card-bg">
+<!--<div class="hero">-->
+<!--    <div class="btn-box">-->
+<!--        <i class="fa-solid fa-book"></i>-->
+<!--    </div>-->
+<!--</div>-->
+
+<div id="videos" class="tab-content active">
     <div class="card-container">
         <div class="card">
             <img src="images/tuf%20thumb.jpg" alt="" class="card-img"/>
@@ -135,12 +143,58 @@
         </div>
 
     </div>
-
-
-
-
-
 </div>
+
+<div id="articles" class="tab-content">
+    <div class="card-container">
+        <div class="card">
+            <img src="images/arti4.jpg" alt="" class="card-img"/>
+            <div class="card-content">
+
+                <h3 class="card-title">Apple Vision Pro</h3>
+                <a href="images/arti4.jpg" class="card-btn">Read Article</a>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+            <img src="images/arti3.jpg" alt="" class="card-img"/>
+            <div class="card-content">
+
+                <h2 class="card-title">DJI Avata 2</h2>
+                <a href="images/arti3.jpg" class="card-btn">Read Article</a>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+            <img src="images/arti2.jpg" alt="" class="card-img"/>
+            <div class="card-content">
+
+                <h2 class="card-title">Transform of AI</h2>
+                <a href="images/arti2.jpg" class="card-btn" target="_blank">Read Article</a>
+
+            </div>
+
+
+        </div>
+
+        <div class="card">
+            <img src="images/arti1.jpg" alt="" class="card-img"/>
+            <div class="card-content">
+
+                <h2 class="card-title">Google Pixel 9</h2>
+                <a href="images/arti1.jpg" class="card-btn" target="_blank">Read Article</a>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
 <!-- Footer Section -->
 <footer>
     <div class="footer-container">
