@@ -99,3 +99,16 @@ function redirectTo(url) {
     window.open(url, '_blank');
 }
 
+function openTab(videos){
+    document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+    });
+    // let articles;
+    document.getElementById(videos).classList.add('active');
+    document.querySelectorAll('.tab-buttons button').forEach(button => {
+        button.classList.remove('active');
+    });
+
+    event.target.classList.add('active');
+}
+

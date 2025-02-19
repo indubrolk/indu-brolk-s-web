@@ -423,15 +423,15 @@ hr {
 .tab-buttons{
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    margin: 40px 0;
 }
 
 .tab-buttons button{
     padding: 10px 20px;
-    margin: 0 10px;
+    margin: 0 60px;
     cursor: pointer;
     border: none;
-    background: #007bff;
+    background: #ff6600;
     color: white;
     font-size: 16px;
     border-radius: 5px;
@@ -439,10 +439,18 @@ hr {
 }
 
 .tab-buttons button.active{
-    background: #0056b3;
+    background: #df5b00;
 }
 
-.
+.tab-content{
+    display: none;
+}
+
+.tab-content.active{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 
 
