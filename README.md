@@ -23,13 +23,13 @@ The goal of this project was to display my portfolio in a creative way. It featu
 - debugging JavaScript, optimizing CSS for performance.  
 
 **How to Run the Project:**  
-1. Clone the repository: `git clone [repository URL]`  
+1. Clone the repository: `git clone https://github.com/indubrolk/indu-brolk-s-web`  
 2. Open the `index.html` file in your browser.  
 
 **Future Improvements:**  
 - add dark mode, improve accessibility, integrate a backend.  
 
-**Live Demo:** [If applicable, include a link to a live demo or deployed version of the project]  
+**Live Demo:** https://indubrolk.github.io/indu-brolk-s-web/  
 
 **Contributions Welcome!**  
 If you'd like to contribute, feel free to open an issue or submit a pull request. Let's make this project even better together!  
