@@ -400,7 +400,7 @@ span{
 }
 
 body{
-    background-color: #1c1c1c;
+    background: linear-gradient(-45deg, #1a1a1a, #422a1b, #1a1a1a, #3e2918);
 }
 
 hr {
