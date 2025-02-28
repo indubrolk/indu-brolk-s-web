@@ -107,6 +107,12 @@ html{
     display: flex;
     gap: 15px;
 }
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
 .navbar ul li{
     list-style: none;
     display: inline-block;
