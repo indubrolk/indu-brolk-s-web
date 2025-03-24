@@ -29,7 +29,7 @@ The goal of this project was to display my portfolio in a creative way. It featu
 **Future Improvements:**  
 - add dark mode, improve accessibility, integrate a backend.  
 
-**Live Demo:** https://indubrolk.github.io/indu-brolk-s-web/  
+**Live Web Site:** https://www.indubrolk.live  
 
 **Contributions Welcome!**  
 If you'd like to contribute, feel free to open an issue or submit a pull request. Let's make this project even better together!  
