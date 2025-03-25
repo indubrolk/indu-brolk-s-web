@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function(){
             document.getElementById("main-content").style.display = "block";
 
 
+
         }, 4000);
     }
     else{
@@ -111,4 +112,17 @@ function openTab(videos){
 
     event.target.classList.add('active');
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const goToHomeButton = document.getElementById("go-to-home");
+
+
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 300) {
+            goToHomeButton.style.display = "flex";
+        } else {
+            goToHomeButton.style.display = "none";
+        }
+    });
+});
 
