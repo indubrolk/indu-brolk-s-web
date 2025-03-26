@@ -106,7 +106,13 @@ html{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
 }
 
 .nav-links {
@@ -338,7 +344,7 @@ span{
 
 .about-col-2{
     flex-basis: 60%;
-    
+
 }
 .about-me-p{
     font-weight: bold;
@@ -406,9 +412,7 @@ span{
     background: #1c1c1c;
 }
 
-body{
-    background: linear-gradient(-45deg, #1a1a1a, #422a1b, #1a1a1a, #3e2918);
-}
+
 
 hr {
     border: none;
@@ -854,6 +858,10 @@ input[type="password"] {
         padding: 15px;
         margin: auto;
     }
+}
+
+body{
+    background: linear-gradient(-45deg, #1a1a1a, #422a1b, #1a1a1a, #3e2918);
 }
 
 
