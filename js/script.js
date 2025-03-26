@@ -114,7 +114,7 @@ function openTab(videos){
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    const goToHomeButton = document.getElementById("go-to-home");
+    let goToHomeButton = document.getElementById("go-to-home");
 
 
     window.addEventListener("scroll", function () {
