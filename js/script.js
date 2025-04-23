@@ -126,3 +126,10 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+function openSlider(){
+    document.getElementById("imageSliderModel").style.display = "block";
+}
+
+function closeSlider(){
+    document.getElementById("imagesSliderModal").style.display = "none";
+}
