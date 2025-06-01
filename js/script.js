@@ -2,8 +2,16 @@ const yt = document.getElementById("yt-btn")
 const fb = document.getElementById("fb-btn")
 const ins = document.getElementById("ins-btn")
 const x = document.getElementById("x-btn")
+const modal = document.getElementById('popupModal');
+const slides = document.getElementById('slideContainer');
+let currentIndex = 0;
+
+
 // const menuIcon = document.getElementById('menu-icon');
 // const navLinks = document.querySelector(".nav-links");
+
+
+
 
 
 document.addEventListener("DOMContentLoaded", function(){
@@ -26,6 +34,23 @@ document.addEventListener("DOMContentLoaded", function(){
 
     }
 });
+
+function openModal() {
+    modal.style.display = 'flex';
+    currentIndex = 0;
+    updateSlide();
+}
+
+function closeModal(){
+    modal.style.display = 'none';
+}
+
+function nextSlide(){
+    if(currentIndex < 1){
+        currentIndex++;
+        updateSlide();
+    }
+}
 
 // menuIcon.addEventListener("click", () => {
 //     navLinks.classList.toggle("active");
@@ -126,10 +151,10 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-function openSlider(){
-    document.getElementById("imageSliderModel").style.display = "block";
-}
-
-function closeSlider(){
-    document.getElementById("imagesSliderModal").style.display = "none";
-}
+// function openSlider(){
+//     document.getElementById("imageSliderModel").style.display = "block";
+// }
+//
+// function closeSlider(){
+//     document.getElementById("imagesSliderModal").style.display = "none";
+// }
