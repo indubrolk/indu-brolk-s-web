@@ -782,6 +782,7 @@ hr {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  /* padding-bottom: 150px; */
 }
 
 /*about*/
@@ -867,6 +868,11 @@ footer {
   color: #ababab;
   padding: 40px 20px;
   text-align: center;
+  position: bottom;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .footer-container {
@@ -1123,6 +1129,8 @@ input[type="password"] {
     width: 600px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 50px;
+    padding: 30px;
   }
 }
 

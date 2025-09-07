@@ -93,7 +93,7 @@ window.addEventListener('load', function() {
             }
 
             // Show all other content that was hidden
-            document.querySelectorAll('.card-bg, .form-div, footer, .website-views').forEach(element => {
+            document.querySelectorAll('.card-bg, .form-div, footer, .website-views, .articles-h, hr').forEach(element => {
                 element.style.display = 'block';
             });
 
@@ -110,7 +110,7 @@ window.addEventListener('load', function() {
 
 // Alternative: Hide loader after DOM is loaded (faster)
 // Uncomment below and comment above if you want faster loading
-/*
+
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => {
         const loader = document.getElementById('loader');
@@ -124,7 +124,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 500);
     }, 1500); // Show loader for 1.5 seconds
 });
-*/
 
 // document.addEventListener("DOMContentLoaded", function(){
 //
