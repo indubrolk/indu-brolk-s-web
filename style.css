@@ -22,9 +22,22 @@ html {
   justify-content: center;
   align-items: center;
   background: linear-gradient(-45deg, #1a1a1a, #432713, #1a1a1a, #472812);
-  animation: gradientAnimation 6s infinite alternate;
+  background-size: 400% 400%;
+  animation: gradientAnimation 6s ease infinite alternate;
   z-index: 9999;
   transition: opacity 0.5s ease-out;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .loader-container {
@@ -48,6 +61,37 @@ html {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* Responsive styles for loader */
+@media (max-width: 768px) {
+  .loader-logo {
+    width: 80px;
+  }
+
+  .loader-text {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .loader {
+    --cell-size: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loader-logo {
+    width: 60px;
+  }
+
+  .loader-text {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .loader {
+    --cell-size: 30px;
+  }
+}
+
 .loader {
   --cell-size: 52px;
   --cell-spacing: 1px;
@@ -59,6 +103,75 @@ html {
   flex-wrap: wrap;
   width: var(--total-size);
   height: var(--total-size);
+}
+
+/* From Uiverse.io by satyamchaudharydev */
+.spinner {
+  --size: 30px;
+  --first-block-clr: #fd690c;
+  --second-block-clr: #554b46;
+  --clr: #111;
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+.spinner::after,
+.spinner::before {
+  box-sizing: border-box;
+  position: absolute;
+  content: "";
+  width: var(--size);
+  height: var(--size);
+  top: 50%;
+  animation: up 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+  left: 50%;
+  background: var(--first-block-clr);
+}
+
+.spinner::after {
+  background: var(--second-block-clr);
+  top: calc(50% - var(--size));
+  left: calc(50% - var(--size));
+  animation: down 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+}
+
+@keyframes down {
+  0%,
+  100% {
+    transform: none;
+  }
+
+  25% {
+    transform: translateX(100%);
+  }
+
+  50% {
+    transform: translateX(100%) translateY(100%);
+  }
+
+  75% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes up {
+  0%,
+  100% {
+    transform: none;
+  }
+
+  25% {
+    transform: translateX(-100%);
+  }
+
+  50% {
+    transform: translateX(-100%) translateY(-100%);
+  }
+
+  75% {
+    transform: translateY(-100%);
+  }
 }
 
 .cell {
@@ -170,15 +283,6 @@ html {
 .main-h1 h1.typing {
   animation: typing 3.5s steps(25, end) forwards,
     blink-caret 0.75s step-end infinite;
-}
-
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
 }
 
 .text h1 {
@@ -304,6 +408,13 @@ html {
 .nav-links li a {
   text-decoration: none;
   color: white;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links li a i {
+  margin-right: 8px;
+  font-size: 18px;
 }
 
 /*#nav-links{*/
@@ -325,20 +436,41 @@ html {
     display: none;
     width: 100%;
     text-align: center;
+    position: fixed;
+    top: 60px;
+    right: 0;
+    background-color: #333;
+    height: calc(100% - 60px);
+    flex-direction: column;
+    padding: 10px;
+    z-index: 10000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
   }
 
   .menu-icon {
     display: block;
+    cursor: pointer;
   }
 
   .nav-links.active {
-    display: block;
+    display: flex;
+    transform: translateX(0);
   }
 
   /* You can change the fill color of the SVG icon here */
   .menu-icon svg {
     width: 30px;
     height: 30px;
+  }
+
+  .close-icon {
+    display: block;
+    font-size: 36px;
+    color: white;
+    cursor: pointer;
+    text-align: right;
+    padding: 10px 20px;
   }
 }
 

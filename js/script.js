@@ -12,10 +12,17 @@ let currentIndex = 0;
     // Menu toggle (mobile)
     const menuIcon = document.getElementById('menu-icon');
     const navLinks = document.getElementById('nav-links');
-    
+    const closeIcon = document.getElementById('close-icon');
+
     if (menuIcon && navLinks) {
         menuIcon.addEventListener('click', function() {
             navLinks.classList.toggle('active');
+        });
+    }
+
+    if (closeIcon && navLinks) {
+        closeIcon.addEventListener('click', function() {
+            navLinks.classList.remove('active');
         });
     }
 
