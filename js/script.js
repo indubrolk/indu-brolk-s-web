@@ -2,9 +2,22 @@ const yt = document.getElementById("yt-btn")
 const fb = document.getElementById("fb-btn")
 const ins = document.getElementById("ins-btn")
 const x = document.getElementById("x-btn")
-const modal = document.getElementById('popupModal');
-const slides = document.getElementById('slideContainer');
+
 let currentIndex = 0;
+
+
+    
+
+    
+    // Menu toggle (mobile)
+    const menuIcon = document.getElementById('menu-icon');
+    const navLinks = document.getElementById('nav-links');
+    
+    if (menuIcon && navLinks) {
+        menuIcon.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+    }
 
 
 // const menuIcon = document.getElementById('menu-icon');
@@ -34,6 +47,38 @@ window.addEventListener('load', function() {
         setTimeout(() => {
             loader.style.display = 'none';
             mainContent.style.display = 'block';
+
+            // Start typewriter effect
+            const texts = ["Your Best Technocract","Full Stack Developer", "Youtuber", "Tech Enthusiast"];
+            const h1 = document.getElementById("typewriter-h1");
+            h1.textContent = "";
+            let textIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+
+            function typeWriter() {
+                const currentText = texts[textIndex];
+                if (!isDeleting) {
+                    h1.textContent += currentText.charAt(charIndex);
+                    charIndex++;
+                    if (charIndex === currentText.length) {
+                        isDeleting = true;
+                        setTimeout(typeWriter, 2000); // Pause before deleting
+                        return;
+                    }
+                } else {
+                    h1.textContent = currentText.substring(0, charIndex - 1);
+                    charIndex--;
+                    if (charIndex === 0) {
+                        isDeleting = false;
+                        textIndex = (textIndex + 1) % texts.length;
+                        setTimeout(typeWriter, 500); // Pause before next text
+                        return;
+                    }
+                }
+                setTimeout(typeWriter, isDeleting ? 50 : 100);
+            }
+            typeWriter();
 
             // Show other sections
             if (aboutSection) {
