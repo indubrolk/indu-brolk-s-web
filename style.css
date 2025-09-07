@@ -558,6 +558,10 @@ section {
 }
 
 @keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
@@ -908,6 +912,7 @@ hr {
   text-align: center;
   align-content: center;
   margin: 0 auto;
+  border-radius: 18px;
 }
 
 .form-h2 {
@@ -1092,11 +1097,137 @@ footer {
   margin-top: 50px;
   color: white;
   font-size: 50px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  animation: fadeInDown 1s ease forwards;
 }
 
 .cont-yt-btn {
+  width: 100%;
   margin-top: 30px;
   justify-items: center;
+  text-align: center;
+  padding: 60px 40px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  transform: translateY(0);
+  transition: all 0.4s ease;
+}
+
+.cont-yt-btn:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(255, 102, 0, 0.2);
+}
+
+.cont-yt-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 102, 0, 0.1),
+    rgba(251, 126, 16, 0.1)
+  );
+  border-radius: 25px;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.cont-yt-btn:hover::before {
+  opacity: 1;
+}
+
+.floating-elements {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.floating-icon {
+  position: absolute;
+  opacity: 0.1;
+  animation: float 8s ease-in-out infinite;
+  font-size: 1.8rem;
+  color: #ff6600;
+}
+
+.floating-icon:nth-child(1) {
+  top: 15%;
+  left: 10%;
+  animation-delay: -2s;
+}
+
+.floating-icon:nth-child(2) {
+  top: 20%;
+  right: 15%;
+  animation-delay: -4s;
+}
+
+.floating-icon:nth-child(3) {
+  bottom: 20%;
+  left: 15%;
+  animation-delay: -1s;
+}
+
+.floating-icon:nth-child(4) {
+  bottom: 15%;
+  right: 10%;
+  animation-delay: -3s;
+}
+
+#yt-btn {
+  position: relative;
+  font-family: "roboto", sans-serif;
+  width: 180px;
+  padding: 18px 0;
+  text-align: center;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  border: 2px solid #f66201;
+  background: #ff6600;
+  color: black;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255, 102, 0, 0.4);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  opacity: 0;
+  animation: fadeInUp 1s ease 0.5s forwards;
+}
+
+#yt-btn:hover,
+#yt-btn:focus,
+#yt-btn:active {
+  box-shadow: 0 0 25px rgba(255, 123, 35, 0.6);
+  transform: scale(1.1);
+  background: linear-gradient(45deg, #ff6600, #ff7516);
+}
+
+#yt-btn span {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  background-color: black;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  transition: all 0.3s ease;
+}
+
+#yt-btn:hover span {
+  transform: scale(1.2);
+  background-color: white;
 }
 
 .login-container {
@@ -1192,14 +1323,202 @@ input[type="password"] {
     margin: 0;
   }
 
+  .cont-yt-btn {
+    text-align: center;
+    padding: 60px 40px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    position: relative;
+    overflow: hidden;
+    transform: translateY(0);
+    transition: all 0.4s ease;
+  }
+
+  .cont-yt-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      45deg,
+      rgba(255, 102, 0, 0.1),
+      rgba(251, 126, 16, 0.1)
+    );
+    border-radius: 25px;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+  }
+
+  .cont-yt-btn:hover::before {
+    opacity: 1;
+  }
+
+  .cont-yt-btn:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(255, 102, 0, 0.2);
+  }
+
   .cont-yt-h4 {
-    font-size: 20px;
+    color: white;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 40px;
   }
 
   #yt-btn {
-    width: 180px;
-    font-size: 16px;
-    padding: 12px 0;
+    position: relative;
+    font-family: "roboto", sans-serif;
+    width: 200px;
+    padding: 18px 0;
+    text-align: center;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid #f66201;
+    background: #ff6600;
+    color: black;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.4);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.5s forwards;
+  }
+
+  #yt-btn:hover,
+  #yt-btn:focus,
+  #yt-btn:active {
+    box-shadow: 0 0 25px rgba(255, 123, 35, 0.6);
+    transform: scale(1.1);
+    background: linear-gradient(45deg, #ff6600, #ff7516);
+  }
+
+  #yt-btn span {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    background-color: black;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    transition: all 0.3s ease;
+  }
+
+  #yt-btn:hover span {
+    transform: scale(1.2);
+    background-color: white;
+  }
+
+  .floating-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .floating-icon {
+    position: absolute;
+    opacity: 0.1;
+    animation: float 8s ease-in-out infinite;
+    font-size: 1.8rem;
+    color: #ff6600;
+  }
+
+  .floating-icon:nth-child(1) {
+    top: 15%;
+    left: 10%;
+    animation-delay: -2s;
+  }
+
+  .floating-icon:nth-child(2) {
+    top: 20%;
+    right: 15%;
+    animation-delay: -4s;
+  }
+
+  .floating-icon:nth-child(3) {
+    bottom: 20%;
+    left: 15%;
+    animation-delay: -1s;
+  }
+
+  .floating-icon:nth-child(4) {
+    bottom: 15%;
+    right: 10%;
+    animation-delay: -3s;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+      opacity: 0.1;
+    }
+    50% {
+      transform: translateY(-25px) rotate(180deg);
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 15px rgba(255, 102, 0, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(255, 102, 0, 0.7);
+    }
+    100% {
+      box-shadow: 0 0 15px rgba(255, 102, 0, 0.4);
+    }
+  }
+
+  #yt-btn.pulse {
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  /* Responsive styles matching your CSS */
+  @media screen and (max-width: 768px) {
+    .cont-yt-btn {
+      margin: 20px;
+      padding: 40px 30px;
+      max-width: 90%;
+    }
+
+    .cont-yt-h4 {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+    }
+
+    #yt-btn {
+      width: 180px;
+      font-size: 16px;
+      padding: 15px 0;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .cont-yt-btn {
+      padding: 30px 20px;
+    }
+
+    .cont-yt-h4 {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+    }
+
+    #yt-btn {
+      width: 160px;
+      font-size: 14px;
+      padding: 12px 0;
+    }
   }
 
   .footer-container {
@@ -1267,4 +1586,15 @@ input[type="password"] {
 
 body {
   background: linear-gradient(-45deg, #1a1a1a, #422a1b, #1a1a1a, #3e2918);
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

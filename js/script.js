@@ -14,6 +14,39 @@ let currentIndex = 0;
     const navLinks = document.getElementById('nav-links');
     const closeIcon = document.getElementById('close-icon');
 
+const button = document.getElementById('yt-btn');
+
+button.addEventListener('mouseenter', () => {
+    button.classList.add('pulse');
+});
+
+button.addEventListener('mouseleave', () => {
+    button.classList.remove('pulse');
+});
+
+button.addEventListener('click', () => {
+    // Add click feedback
+    button.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+        button.style.transform = '';
+    }, 150);
+});
+
+// Enhance floating elements interaction
+document.querySelectorAll('.floating-icon').forEach(icon => {
+    icon.addEventListener('mouseenter', () => {
+        icon.style.opacity = '0.6';
+        icon.style.transform = 'scale(1.3)';
+        icon.style.color = '#ff7516';
+    });
+
+    icon.addEventListener('mouseleave', () => {
+        icon.style.opacity = '0.1';
+        icon.style.transform = 'scale(1)';
+        icon.style.color = '#ff6600';
+    });
+});
+
     if (menuIcon && navLinks) {
         menuIcon.addEventListener('click', function() {
             navLinks.classList.toggle('active');
