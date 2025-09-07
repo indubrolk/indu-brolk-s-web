@@ -474,6 +474,96 @@ html {
   }
 }
 
+section {
+  padding: 10px 50px;
+  text-align: center;
+}
+
+.techstack-h2 {
+  padding: 10px 20px;
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+  color: #ffffffff;
+}
+
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 35px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.stack-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.stack-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.stack-card img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 12px;
+  transition: transform 0.3s;
+}
+
+.stack-card:hover img {
+  transform: rotate(10deg) scale(1.1);
+}
+
+.stack-card p {
+  margin: 0;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Animation when entering */
+.stack-card {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 0.6s forwards;
+}
+
+.stack-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.stack-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.stack-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.stack-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.stack-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.stack-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.stack-card:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.stack-card:nth-child(8) {
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Button Styling */
 .sign-up {
   width: 100px;
