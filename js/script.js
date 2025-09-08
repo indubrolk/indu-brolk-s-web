@@ -89,7 +89,7 @@ window.addEventListener('load', function() {
         setTimeout(() => {
             loader.style.display = 'none';
             mainContent.style.display = 'block';
-            techstacksection.style.display = 'block';
+            techstacksection.style.display = 'none';
 
             // Start typewriter effect
             const texts = ["Your Best Technocract","Full Stack Developer", "Youtuber", "Tech Enthusiast"];
@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             loader.style.display = 'none';
             mainContent.style.display = 'block';
-            techstacksection.style.display = 'block';
+            techstacksection.style.display = 'none';
         }, 500);
     }, 1500); // Show loader for 1.5 seconds
 });
