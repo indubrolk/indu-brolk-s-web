@@ -79,6 +79,8 @@ window.addEventListener('load', function() {
         const loader = document.getElementById('loader');
         const mainContent = document.getElementById('main-content');
         const aboutSection = document.getElementById('about');
+        const techstacksection = document.getElementById('techstack');
+
 
         // Add fade out class to loader
         loader.classList.add('fade-out');
@@ -87,6 +89,7 @@ window.addEventListener('load', function() {
         setTimeout(() => {
             loader.style.display = 'none';
             mainContent.style.display = 'block';
+            techstacksection.style.display = 'block';
 
             // Start typewriter effect
             const texts = ["Your Best Technocract","Full Stack Developer", "Youtuber", "Tech Enthusiast"];
@@ -123,10 +126,11 @@ window.addEventListener('load', function() {
             // Show other sections
             if (aboutSection) {
                 aboutSection.style.display = 'block';
+
             }
 
             // Show all other content that was hidden
-            document.querySelectorAll('.card-bg, .form-div, footer, .website-views, .articles-h, hr').forEach(element => {
+            document.querySelectorAll('.card-bg, .form-div, footer, .website-views, .articles-h, hr,#techstack').forEach(element => {
                 element.style.display = 'block';
             });
 
@@ -147,13 +151,16 @@ window.addEventListener('load', function() {
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => {
         const loader = document.getElementById('loader');
+        const techstacksection = document.getElementById('techstack');
         const mainContent = document.getElementById('main-content');
+
 
         loader.classList.add('fade-out');
 
         setTimeout(() => {
             loader.style.display = 'none';
             mainContent.style.display = 'block';
+            techstacksection.style.display = 'block';
         }, 500);
     }, 1500); // Show loader for 1.5 seconds
 });
@@ -179,22 +186,22 @@ document.addEventListener('DOMContentLoaded', function() {
 //     }
 // });
 
-function openModal() {
-    modal.style.display = 'flex';
-    currentIndex = 0;
-    updateSlide();
-}
-
-function closeModal(){
-    modal.style.display = 'none';
-}
-
-function nextSlide(){
-    if(currentIndex < 1){
-        currentIndex++;
-        updateSlide();
-    }
-}
+// function openModal() {
+//     modal.style.display = 'flex';
+//     currentIndex = 0;
+//     updateSlide();
+// }
+//
+// function closeModal(){
+//     modal.style.display = 'none';
+// }
+//
+// function nextSlide(){
+//     if(currentIndex < 1){
+//         currentIndex++;
+//         updateSlide();
+//     }
+// }
 
 // menuIcon.addEventListener("click", () => {
 //     navLinks.classList.toggle("active");
